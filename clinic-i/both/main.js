@@ -1,5 +1,5 @@
  AdminConfig = {
-  adminEmails: ['yeboahmedia@gmail.org'],
+  adminEmails: ['yeboahmedia@gmail.com'],
   collections: {
     Check: {}
   }

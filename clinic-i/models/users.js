@@ -2,16 +2,10 @@
 
 // var Schemas = {};
 
-// Schemas.Check = new SimpleSchema({
-//     owner: {
-//         type: String,
-//         autoform: {
-//             omit: true
-//         },
-//         autoValue: function(){
-//             return Meteor.userId();
-//         }
+// Schemas.Meteor.users = new SimpleSchema({
+//     name: {
+//         type: String
 //     }
 // });
 
-// Check.attachSchema(Schemas.Check);
+// Meteor.users.attachSchema(Schemas.Meteor.users);

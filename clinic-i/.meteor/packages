@@ -6,18 +6,19 @@
 
 meteor-platform
 fortawesome:fontawesome
-mizzao:bootstrap-3
 mrt:jquery-easing
 
 
 twbs:bootstrap
 aldeed:autoform
 aldeed:collection2
+
 joshowens:accounts-entry
 accounts-password
+
 yogiben:autoform-modals
 yogiben:admin
 
 iron:router
 jquery
-accounts-ui
+ian:accounts-ui-bootstrap-3
