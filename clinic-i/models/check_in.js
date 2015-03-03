@@ -2,7 +2,7 @@ Check = new Mongo.Collection('check');
 
 var Schemas = {};
 
-Schemas.CheckIn = new SimpleSchema({
+Schemas.Check = new SimpleSchema({
     owner: {
         type: String,
         autoform: {
