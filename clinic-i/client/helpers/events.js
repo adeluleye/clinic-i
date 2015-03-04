@@ -1,10 +1,14 @@
 Template.header.events({
 	'click #services': function () {
-		Check.insert({},function(e,r){
-			var checkin = Check.findOne(r);
-			id = checkin._id
-			console.log(id);
-			return id;
+		Checks.insert({},function(e,r){
+			var checkIn = Checks.findOne(r);
+			firstName = Meteor.user().profile['first'];
+			lastName = Meteor.user().profile['last'];
+
+			text = firstName + ' ' + lastName + ' is going to the hospital ' + 'with the following code ' + r;
+			console.log(text);
+			Session.set('checkIn',checkIn);
+			Meteor.call('sendEmail', 'yeboahmedia@gmail.com', 'kwame.yeboah@meltwater.org', 'hello admin', text);
 		});
 	}
 });

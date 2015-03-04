@@ -9,7 +9,7 @@ Router.route('/', function () {
 },{
 	data: function(){
 		return {
-			check: Check.find().fetch()
+			check: Checks.find().fetch()
 		}
 	}
 });

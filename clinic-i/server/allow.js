@@ -1,4 +1,4 @@
-Check.allow({
+Checks.allow({
 	insert: function (userId, doc) {
         return  true;
     },

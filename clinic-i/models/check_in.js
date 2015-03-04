@@ -1,8 +1,8 @@
-Check = new Mongo.Collection('check');
+Checks = new Mongo.Collection('check');
 
 var Schemas = {};
 
-Schemas.Check = new SimpleSchema({
+Schemas.Checks = new SimpleSchema({
     owner: {
         type: String,
         autoform: {
@@ -14,4 +14,4 @@ Schemas.Check = new SimpleSchema({
     }
 });
 
-Check.attachSchema(Schemas.Check);
+Checks.attachSchema(Schemas.Checks);

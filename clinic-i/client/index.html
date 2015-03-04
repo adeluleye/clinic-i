@@ -1,5 +1,5 @@
 <head>
-	<title>Health Watch</title>
+	<title>Clinic-I</title>
 </head>
 
 <template name="index">
@@ -51,7 +51,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+            <a class="navbar-brand page-scroll" href="#page-top">Clinic-I</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -138,22 +138,19 @@
 </Template>
 
 <template name="modaling">
-{{#with checkin}} 
+{{#with $.Session.get 'checkIn'}}
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-    
       <div class="modal-body">
             <div>
-                <h4>{{_id}}</h4>
-            </div>
-            <div>
-                
+                <h5 class="text-center">This is your clinic Pass: </h5>
+                <h4 class="text-center">{{_id}}</h4>
+                <p class="text-center">Admin has been notified and neccesary follow ups will be made</p>
             </div>
       </div>
-        <button type="button" class="btn btn-primary text-center">Notify Admin</button>
-    </div>
   </div>
+</div>
 </div>
 {{/with}}
 </template>
