@@ -4,8 +4,12 @@ Template.header.events({
 			var checkIn = Checks.findOne(r);
 			firstName = Meteor.user().profile['first'];
 			lastName = Meteor.user().profile['last'];
+			console.log(checkIn);
+			date = checkIn.createdAt;
+			console.log(date);
 
-			text = firstName + ' ' + lastName + ' is going to the hospital ' + 'with the following code ' + r;
+
+			text = firstName + ' ' + lastName + ' is going to the hospital ' + 'with the following code ' + r + 'date and time log at: ' + date;
 			console.log(text);
 			Session.set('checkIn',checkIn);
 			Meteor.call('sendEmail', 'yeboahmedia@gmail.com', 'kwame.yeboah@meltwater.org', 'hello admin', text);
