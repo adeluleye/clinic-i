@@ -1,0 +1,33 @@
+<template name="masterLayout">
+
+{{> nav}}
+{{> yield}}
+
+</template>
+
+<Template name="nav">
+   <!-- Navigation -->
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">Clinic I</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="inactive"><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="#portfolioModal1" data-toggle="modal">About</a></li>
+        <li><a href="#portfolioModal2" data-toggle="modal">Team</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}}
+    </ul>
+</div>
+</div>
+</nav>
+</Template>

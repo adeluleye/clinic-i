@@ -1,0 +1,166 @@
+
+<template name="clinicHome">
+	{{> clinicNav}}
+	{{> clinicMain}}
+</template>
+
+
+
+<template name="clinic">
+	{{> clinicNav}}
+
+     <div class="col-md-2" id="cann">
+                <ul class="nav nav-tabs nav-stacked affixer" data-spy="affix" data-offset-top="600" >
+                    <li class="side-affix"><a  href="#accordion3" aria-expanded="false" aria-controls="accordion2" class="2nd" data-toggle="modal" data-target="#exampleModal">Generate Report</a></li>
+                    <li class="side-affix"><a href="#accordion4" aria-expanded="false" aria-controls="accordion3" class="3rd">Statistics</a></li>
+                    <li class="side-affix"><a href="#accordion5" aria-expanded="false" aria-controls="accordion4" class="4th">View Bills</a></li>
+                    <li class="side-affix"><a href="/clinic" aria-expanded="false" aria-controls="accordion4" class="4th">Home</a></li>
+                    <li class="side-affix"><a href="#accordion6" aria-expanded="false" aria-controls="accordion5" class="4th">More...</a></li>
+                </ul>
+            </div>
+	<body class="clinic">
+		<div class="seperate">
+			<div class="container vim col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" style="background-color: #4ECDC4">
+				<div >
+					{{#autoForm collection="Bills" type="insert" id="billForm"}}
+					{{> afQuickField name='passId'}}
+					{{> afQuickField name='comment'}}
+
+					<div class="col-md-6 col-lg-6">
+						{{> afQuickField name="disease" options="allowed" noselect=true}}
+						{{#if afFieldValueIs name="disease" value="other"}}
+						{{> afQuickField name="diseaseOther"}}
+						{{/if}}
+					</div>
+					<div class="col-md-6 col-lg-6">
+
+
+						{{> afQuickField name="status" options="allowed" noselect=true}}
+					</div>
+					<div class="row">
+					</div>
+
+
+					<div class="col-md-2 col-lg-2 col-sm-4 col-xs-4 amount text-center">
+					</div>
+					<div class="row">
+					</div>
+
+					<div class="row text-center">
+						<button type="submit" class="btn" id="process">Save</button>
+						<a class="btn btn-danger">Dismiss</a>
+					</div>
+					{{/autoForm}}
+				</div>
+
+
+				<div>
+				</div>
+			</div>
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div>
+								<h5 class="text-center">This will generate report for users</h5>
+								<a href="/clinic/reports"><button class="btn btn-success report text-center" style="margin-left: 40%">Generate Report</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</body>
+</template>
+
+<Template name="clinicNav">
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="/">Clinic-I</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="#portfolioModal1" data-toggle="modal">Help</a></li>
+					<li><a href="#portfolioModal2" data-toggle="modal">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					{{> loginButtons}}
+				</ul>
+			</div>
+		</div>
+	</nav>
+</Template>
+
+
+<template name="clinicMain">
+	{{> clinicNav}}
+
+     <div class="col-md-2" id="cann">
+                <ul class="nav nav-tabs nav-stacked affixer" data-spy="affix" data-offset-top="600" >
+                    <li class="side-affix"><a  href="/clinic/new" aria-expanded="false" aria-controls="accordion" class="1st">New Case</a></li>
+                    <li class="side-affix"><a  href="#accordion3" aria-expanded="false" aria-controls="accordion2" class="2nd" data-toggle="modal" data-target="#exampleModal">Generate Report</a></li>
+                    <li class="side-affix"><a href="#accordion4" aria-expanded="false" aria-controls="accordion3" class="3rd">Statistics</a></li>
+                    <li class="side-affix"><a href="#accordion5" aria-expanded="false" aria-controls="accordion4" class="4th">View Bills</a></li>
+                    <li class="side-affix"><a href="#accordion6" aria-expanded="false" aria-controls="accordion5" class="4th">More...</a></li>
+                </ul>
+            </div>
+	<body class="clinic">
+		<div class="seperate">
+			<div class="container vim col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+				<div >
+					{{#autoForm collection="Bills" type="insert" id="billForm"}}
+					<div class="col-md-6 col-lg-6">
+					</div>
+					<div class="col-md-6 col-lg-6">
+
+
+					</div>
+					<div class="row">
+					</div>
+
+
+					<div class="col-md-2 col-lg-2 col-sm-4 col-xs-4 amount text-center">
+					</div>
+					<div class="row">
+					</div>
+
+					<div class="row text-center">
+						<a href="/clinic/new" class="btn btn-success">New Case</a>
+					</div>
+					{{/autoForm}}
+
+				</div>
+
+
+				<div>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div>
+								<h5 class="text-center">This will generate report for users</h5>
+								<a href="/clinic/reports"><button class="btn btn-success report text-center" style="margin-left: 40%">Generate Report</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+</template>

@@ -1,0 +1,32 @@
+.seperate {
+	margin: 4%;
+	margin-top: 8%;
+}
+
+.vim {
+	padding: 2%;
+	border-radius: 3%;
+}
+
+.amount {
+	float: left;
+}
+
+.clinic {
+	background-image: url('img/work.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:cover;
+	background-color: #00aba9;
+	height: 680px;
+}
+
+#cann {
+	display: block;
+	z-index: 1000;
+	margin-top: 9%;
+	font: 17px;
+	font-size: 16px;
+	height: 100%;
+}

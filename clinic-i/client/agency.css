@@ -7,6 +7,7 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #C45A54;
 }
 
 .text-muted {
@@ -265,7 +266,6 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(img/header-bg.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -864,4 +864,14 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #fed136;
+}
+
+.modalContent {
+    background-color: #82ACEB;
+    width: 400px;
+    margin: 0 auto;
+}
+
+#pass {
+    font-size: 25px;
 }

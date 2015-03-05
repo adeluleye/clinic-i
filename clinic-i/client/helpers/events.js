@@ -1,4 +1,4 @@
-Template.header.events({
+Template.checkIn.events({
 	'click #services': function () {
 		Checks.insert({},function(e,r){
 			var checkIn = Checks.findOne(r);
@@ -18,6 +18,3 @@ Template.header.events({
 });
 
 
-// Template.registerHelper('checker',function(){
-//   return Check.find({_id}, {sort: -1})
-// });
