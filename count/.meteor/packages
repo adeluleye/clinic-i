@@ -5,20 +5,5 @@
 # but you can also edit it by hand.
 
 meteor-platform
-fortawesome:fontawesome
-mrt:jquery-easing
-
-
-twbs:bootstrap
-aldeed:autoform
-aldeed:collection2
-
-joshowens:accounts-entry
-accounts-password
-
-yogiben:autoform-modals
-yogiben:admin
-
-iron:router
-jquery
-ian:accounts-ui-bootstrap-3
+autopublish
+insecure

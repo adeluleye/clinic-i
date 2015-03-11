@@ -32,7 +32,9 @@ Router.route('/clinic', function () {
  name: 'clinicHome'},{
 	data: function(){
 		return {
-			bill: Bills.find().fetch()
+			bill: Bills.find().fetch(),
+			check: Checks.find()
+			
 		}
 	}
 
@@ -43,7 +45,8 @@ Router.route('/clinic/new', function () {
  name: 'clinic'},{
 	data: function(){
 		return {
-			bill: Bills.find().fetch()
+			bill: Bills.find().fetch(),
+			check: Checks.find()
 		}
 	}
 });
@@ -53,7 +56,9 @@ Router.route('/clinic/report/overview/diseases', function () {
  name: 'report'},{
 	data: function(){
 		return {
-			bill: Bills.find().fetch()
+			bill: Bills.find().fetch(),
+			check: Checks.find()
+
 		}
 	}
 
@@ -64,7 +69,9 @@ Router.route('/clinic/reports', function () {
  name: 'reports'},{
 	data: function(){
 		return {
-			bill: Bills.find().fetch()
+			bill: Bills.find().fetch(),
+			check: Checks.find()
+
 		}
 	}
 

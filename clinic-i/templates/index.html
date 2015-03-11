@@ -6,8 +6,8 @@
     <body>
      {{> nav}}
      {{> header}}
-     {{> modals}}
-     {{> modaling}}
+     <!-- {{> modals}} -->
+     {{> Template.dynamic template='modaling'}}
  </body>
 </template>
 
@@ -34,8 +34,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#portfolioModal1" data-toggle="modal">About</a></li>
-            <li><a href="#portfolioModal2" data-toggle="modal">Team</a></li>
+            <!-- <li><a href="#portfolioModal1" data-toggle="modal">About</a></li> -->
+            <!-- <li><a href="#portfolioModal2" data-toggle="modal">Team</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
             {{> loginButtons}}
@@ -45,13 +45,18 @@
 </nav>
 </Template>
 
+<template name="_loginButtonsAdditionalLoggedInDropdownActions">
+    <button class="btn btn-default btn-block" id="login-buttons-edit-profile">Edit profile</button>
+</template>
+
 
 <Template name="checkIn">
   <header>
             {{#if currentUser}}
-            <a id="services"  data-toggle="modal" data-target="#exampleModal" class="btn btn-xl">Check In</a>
+            <a id="services"  data-toggle="modal" data-target="#exampleModal" class="btn btn-xl"> EIT Check In</a>
+           <a href="/admin" class="btn btn-xl">MEST Admin Login</a> <a href="/clinic" class="btn btn-xl">Clinic Login</a> 
             {{else}}
-            <a href="/sign-in" class="btn btn-xl">Log in first</a>
+            <a href="#" class="btn btn-xl">Welcome</a>
             {{/if}}
 </header>
 </Template>
@@ -70,17 +75,18 @@
                     <img src="/img/nursepic1.jpg" style="width:2000px">
                     <div class="carousel-caption">
                      <div class="intro-text wow bounceInRight">
-                        {{> checkIn}}
+                        {{> checkIn}} 
+
                     </div>
 
 
                 </div>
             </div>
-            <div class="item">
+            <!-- <div class="item">
             <img src="/img/nursesss.jpg" style ="width:2000px" alt="...">
                 <div class="carousel-caption">
                     <div class="intro-text wow bounceInRight">
-                        <a href="/admin" class="btn btn-xl">Admin Login</a>
+                        <a href="/admin" class="btn btn-xl">MEST Admin Login</a>
 
                     </div>
 
@@ -94,7 +100,7 @@
                         <a href="/clinic" class="btn btn-xl">Clinic Login</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -119,7 +125,7 @@
           <div class="modal-body">
             <div>
                 <h5 class="text-center">This is your clinic Pass: </h5>
-                <h4 class="text-center" id="pass">{{_id}}</h4>
+                <h4 class="text-center">{{_id}}</h4>
                 <p class="text-center">Admin has been notified and neccesary follow ups will be made</p>
             </div>
         </div>
@@ -130,224 +136,3 @@
 </template>
 
 
-
-<Template name="footer">
- <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Your Website 2014</span>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks">
-                    <li><a href="#">Privacy Policy</a>
-                    </li>
-                    <li><a href="#">Terms of Use</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-</Template>
-
-<Template name="modal1">
- <div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            <div class="modal-body">
-                <section id="about">
-                   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-content">
-                        <div class="close-modal" data-dismiss="modal">
-                            <div class="lr">
-                                <div class="rl">
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project Details Go Here -->
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-center">
-                                    <h2 class="section-heading">About</h2>
-                                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <ul class="timeline">
-                                        <li>
-                                            <div class="timeline-image">
-                                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>2009-2011</h4>
-                                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-inverted">
-                                            <div class="timeline-image">
-                                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>March 2011</h4>
-                                                    <h4 class="subheading">An Agency is Born</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-image">
-                                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>December 2012</h4>
-                                                    <h4 class="subheading">Transition to Full Service</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-inverted">
-                                            <div class="timeline-image">
-                                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>July 2014</h4>
-                                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-inverted">
-                                            <div class="timeline-image">
-                                                <h4>Be Part
-                                                    <br>Of Our
-                                                    <br>Story!</h4>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
-
-</Template>
-
-
-
-<Template name="modal2">
- <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-                <div class="rl">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div class="modal-body">
-
-                     <section id="team" class="bg-light-gray">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-center">
-                                    <h2 class="section-heading">Our Amazing Team</h2>
-                                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="team-member">
-                                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                                        <h4>Kay Garland</h4>
-                                        <p class="text-muted">Lead Designer</p>
-                                        <ul class="list-inline social-buttons">
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="team-member">
-                                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                                        <h4>Larry Parker</h4>
-                                        <p class="text-muted">Lead Marketer</p>
-                                        <ul class="list-inline social-buttons">
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="team-member">
-                                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                                        <h4>Diana Pertersen</h4>
-                                        <p class="text-muted">Lead Developer</p>
-                                        <ul class="list-inline social-buttons">
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                                            </li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-8 col-lg-offset-2 text-center">
-                                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section> 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</Template>
